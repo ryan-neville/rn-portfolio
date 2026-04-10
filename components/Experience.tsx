@@ -35,23 +35,23 @@ const experiences: Entry[] = [
     overallPeriod: 'Jun 2022 — Present',
     current: true,
     description:
-      'Progressed through multiple engineering roles at Kinaxis, a global leader in supply chain management SaaS. Responsibilities have spanned cloud engineering, site reliability, and platform leadership — helping ensure that enterprise customers worldwide can depend on a resilient, scalable supply chain platform.',
+      "Progressed through multiple engineering roles at Kinaxis, a global leader in supply chain management SaaS. Responsibilities have spanned cloud engineering, site reliability, and platform leadership — helping ensure that enterprise customers worldwide can depend on a resilient, scalable supply chain platform.",
     roles: [
       { title: 'Team Lead — Cloud Platform', period: 'Nov 2024 — Present', current: true },
       { title: 'Senior Site Reliability Engineer', period: 'Jan 2023 — Nov 2024' },
       { title: 'Advisory Developer, Cloud Engineering', period: 'Jun 2022 — Jan 2023' },
     ],
     highlights: [
-      { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2025' },
-      { icon: Medal, color: 'text-blue-400', text: 'Microsoft Choice Award Recipient — 2025', award: true },
-      { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2024' },
-      { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2023' },
-      { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2022' },
+      { icon: Trophy, color: 'text-amber-400', text: 'Kinaxis Hackathon Participant — 2025' },
+      { icon: Medal, color: 'text-sky-400', text: 'Microsoft Choice Award Recipient — 2025', award: true },
+      { icon: Trophy, color: 'text-amber-400', text: 'Kinaxis Hackathon Participant — 2024' },
+      { icon: Trophy, color: 'text-amber-400', text: 'Kinaxis Hackathon Participant — 2023' },
+      { icon: Trophy, color: 'text-amber-400', text: 'Kinaxis Hackathon Participant — 2022' },
     ],
     tags: ['Cloud Platform', 'Site Reliability Engineering', 'Team Leadership', 'DevOps'],
-    accent: 'from-blue-500 to-cyan-500',
-    dotColor: 'bg-blue-500',
-    shadowColor: 'shadow-blue-500/40',
+    accent: 'from-amber-400 to-orange-400',
+    dotColor: 'bg-amber-500',
+    shadowColor: 'shadow-amber-500/40',
   },
   {
     type: 'work',
@@ -70,7 +70,7 @@ const experiences: Entry[] = [
       { icon: Star, color: 'text-sky-400', text: 'Promoted to Team Lead within cloud operations' },
     ],
     tags: ['Cloud Operations', 'Team Leadership', 'Infrastructure', 'DevOps'],
-    accent: 'from-sky-500 to-indigo-500',
+    accent: 'from-sky-400 to-blue-400',
     dotColor: 'bg-sky-500',
     shadowColor: 'shadow-sky-500/40',
   },
@@ -85,7 +85,7 @@ const experiences: Entry[] = [
     roles: [{ title: 'Software Developer', period: 'May 2015 — Apr 2019' }],
     highlights: [],
     tags: ['C#', 'Java', 'Software Development', 'Full-Stack'],
-    accent: 'from-violet-500 to-purple-500',
+    accent: 'from-violet-400 to-purple-400',
     dotColor: 'bg-violet-500',
     shadowColor: 'shadow-violet-500/40',
   },
@@ -99,12 +99,12 @@ const experiences: Entry[] = [
       'Completed a two-year diploma in Computer Engineering Technology — Computing Science, gaining a strong foundation in software development, computer networking, digital systems, and embedded programming.',
     roles: [{ title: 'Computer Engineering Technology — Computing Science (Diploma)', period: '2012 — 2014' }],
     highlights: [
-      { icon: GraduationCap, color: 'text-violet-400', text: 'Diploma — Computer Engineering Technology' },
+      { icon: GraduationCap, color: 'text-emerald-400', text: 'Diploma — Computer Engineering Technology' },
     ],
     tags: ['Software Development', 'Networking', 'Digital Systems', 'C', 'Java'],
-    accent: 'from-fuchsia-500 to-pink-500',
-    dotColor: 'bg-fuchsia-500',
-    shadowColor: 'shadow-fuchsia-500/40',
+    accent: 'from-emerald-400 to-teal-400',
+    dotColor: 'bg-emerald-500',
+    shadowColor: 'shadow-emerald-500/40',
   },
 ]
 
@@ -127,11 +127,11 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
       </div>
 
       {/* Card */}
-      <div className="group glass border border-white/8 hover:border-white/15 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-black/30">
+      <div className="group glass border border-white/8 hover:border-white/16 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-black/40">
         {/* Current badge */}
         {exp.current && (
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-blue-500/15 text-blue-400 border border-blue-500/25 rounded-full mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-amber-400/10 text-amber-400 border border-amber-400/25 rounded-full mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
             Current Position
           </div>
         )}
@@ -140,14 +140,14 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
         <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <div className="p-1.5 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)' }}>
+              <div className="p-1.5 rounded-lg bg-white/5">
                 <exp.icon size={14} className="text-slate-400" />
               </div>
               <span className="text-xs text-slate-500 uppercase tracking-wider font-medium">
                 {exp.type === 'work' ? 'Work Experience' : exp.type === 'education' ? 'Education' : 'Volunteer'}
               </span>
             </div>
-            <h3 className="text-xl font-bold text-white group-hover:text-blue-200 transition-colors">
+            <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
               {exp.company}
             </h3>
             <p className="text-xs text-slate-500 mt-0.5">{exp.location}</p>
@@ -162,13 +162,17 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
           <div className="mb-5 pl-3 border-l border-white/8 space-y-2">
             {exp.roles.map((role, i) => (
               <div key={i} className="flex items-start gap-2">
-                <ChevronRight size={12} className={`mt-0.5 flex-shrink-0 bg-gradient-to-r ${exp.accent} bg-clip-text text-transparent`} style={{ color: i === 0 ? '#60a5fa' : '#64748b' }} />
+                <ChevronRight
+                  size={12}
+                  className="mt-0.5 flex-shrink-0"
+                  style={{ color: i === 0 ? '#fbbf24' : '#475569' }}
+                />
                 <div>
-                  <span className={`text-sm font-medium ${i === 0 ? 'text-white' : 'text-slate-400'}`}>
+                  <span className={`text-sm font-medium ${i === 0 ? 'text-white' : 'text-slate-500'}`}>
                     {role.title}
                   </span>
                   {role.current && (
-                    <span className="ml-2 text-[10px] text-blue-400 font-medium">● Now</span>
+                    <span className="ml-2 text-[10px] text-amber-400 font-medium">● Now</span>
                   )}
                   <div className="text-xs text-slate-600 font-mono">{role.period}</div>
                 </div>
@@ -189,11 +193,11 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
         {/* Highlights */}
         {exp.highlights.length > 0 && (
           <div className="space-y-2 mb-5">
-            {exp.highlights.map((h, j) => (
+            {exp.highlights.map((h, j) =>
               h.award ? (
                 <div key={j} className="flex items-center gap-2 pl-6">
                   <h.icon size={13} className={`${h.color} flex-shrink-0`} />
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/15 text-blue-300 border border-blue-500/30">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/25">
                     {h.text}
                   </span>
                 </div>
@@ -203,7 +207,7 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
                   <span className="text-sm text-slate-300">{h.text}</span>
                 </div>
               )
-            ))}
+            )}
           </div>
         )}
 
@@ -225,11 +229,11 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="experience" className="relative py-28 bg-[#07091a]">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-violet-500/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="experience" className="relative py-28 bg-[#111827]">
+      {/* Background */}
+      <div className="absolute inset-0 bg-grid" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/4 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-6">
         {/* Section heading */}
@@ -239,7 +243,7 @@ export default function Experience() {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-violet-400 glass border border-violet-500/20 rounded-full mb-5">
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-sky-400 glass border border-sky-400/20 rounded-full mb-5">
             Career Journey
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -249,8 +253,8 @@ export default function Experience() {
 
         {/* Timeline */}
         <div ref={ref} className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-violet-500/30 to-transparent" />
+          {/* Vertical line — amber fading to sky, matching sunset */}
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/60 via-sky-500/30 to-transparent" />
 
           <div className="space-y-10">
             {experiences.map((exp, i) => (

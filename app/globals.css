@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #050816;
-  --foreground: #e2e8f0;
+  --background: #0d1117;
+  --foreground: #f0f6fc;
 }
 
 * {
@@ -28,39 +28,32 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d0d20;
+  background: #161b22;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  background: linear-gradient(to bottom, #fbbf24, #38bdf8);
   border-radius: 4px;
 }
 
 @layer utilities {
+  /* Subtle dot grid — warm amber dots on dark */
   .bg-grid {
-    background-image:
-      linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-image: radial-gradient(circle, rgba(251, 191, 36, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
 
+  /* Sunset gradient: amber → orange → sky blue */
   .gradient-text {
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+    background: linear-gradient(135deg, #fbbf24 0%, #fb923c 45%, #38bdf8 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
+  /* Dark frosted glass */
   .glass {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-  }
-
-  .glow-blue {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
-  }
-
-  .glow-purple {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
   }
 }
