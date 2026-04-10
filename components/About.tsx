@@ -122,7 +122,7 @@ export default function About() {
                 I thrive in fast-paced, collaborative environments — demonstrated by participating
                 in four consecutive{' '}
                 <span className="text-yellow-400 font-medium">Kinaxis Hackathons</span> from 2022
-                through 2025. I love building reliable, scalable systems and bringing ideas to life.
+                through 2025 — earning the Microsoft Choice Award in 2025. I love building reliable, scalable systems and bringing ideas to life.
               </p>
             </div>
 
