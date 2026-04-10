@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Briefcase, GraduationCap, Trophy, Star, Code, ChevronRight } from 'lucide-react'
+import { Briefcase, GraduationCap, Trophy, Star, Code, ChevronRight, Medal } from 'lucide-react'
 
 type Role = {
   title: string
@@ -19,7 +19,7 @@ type Entry = {
   current?: boolean
   description: string
   roles: Role[]
-  highlights: { icon: React.ElementType; color: string; text: string }[]
+  highlights: { icon: React.ElementType; color: string; text: string; award?: boolean }[]
   tags: string[]
   accent: string
   dotColor: string
@@ -43,6 +43,7 @@ const experiences: Entry[] = [
     ],
     highlights: [
       { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2025' },
+      { icon: Medal, color: 'text-blue-400', text: 'Microsoft Choice Award Recipient — 2025', award: true },
       { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2024' },
       { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2023' },
       { icon: Trophy, color: 'text-yellow-400', text: 'Kinaxis Hackathon Participant — 2022' },
@@ -189,10 +190,19 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
         {exp.highlights.length > 0 && (
           <div className="space-y-2 mb-5">
             {exp.highlights.map((h, j) => (
-              <div key={j} className="flex items-center gap-2">
-                <h.icon size={13} className={`${h.color} flex-shrink-0`} />
-                <span className="text-sm text-slate-300">{h.text}</span>
-              </div>
+              h.award ? (
+                <div key={j} className="flex items-center gap-2 pl-6">
+                  <h.icon size={13} className={`${h.color} flex-shrink-0`} />
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/15 text-blue-300 border border-blue-500/30">
+                    {h.text}
+                  </span>
+                </div>
+              ) : (
+                <div key={j} className="flex items-center gap-2">
+                  <h.icon size={13} className={`${h.color} flex-shrink-0`} />
+                  <span className="text-sm text-slate-300">{h.text}</span>
+                </div>
+              )
             ))}
           </div>
         )}
