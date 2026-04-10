@@ -38,12 +38,9 @@ export default function Hero() {
             <div className="absolute inset-1.5 rounded-full overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQGIm8AiXZUUmQ/profile-displayphoto-shrink_200_200/0/1731361019777"
+                src="/profile.jpg"
                 alt="Ryan Neville"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://avatars.githubusercontent.com/u/108026531?v=4'
-                }}
               />
             </div>
             {/* Glow */}

@@ -18,7 +18,11 @@
       "WebFetch(domain:www.linkedin.com)",
       "WebSearch",
       "WebFetch(domain:rocketreach.co)",
-      "WebFetch(domain:www.signalhire.com)"
+      "WebFetch(domain:www.signalhire.com)",
+      "Bash(powershell -NoProfile -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\ryan_\\\\AppData\\\\Local\\\\Temp' -Include '*.jpg','*.jpeg','*.png','*.webp','*.gif' -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 10 | Format-Table FullName, LastWriteTime -AutoSize\")",
+      "Bash(powershell -NoProfile -Command ':*)",
+      "Bash(powershell -NoProfile -Command \"Copy-Item 'C:\\\\Users\\\\ryan_\\\\OneDrive\\\\Documents\\\\GitHub\\\\rn-portfolio\\\\profile_picture.jpg' 'C:\\\\Users\\\\ryan_\\\\OneDrive\\\\Documents\\\\GitHub\\\\rn-portfolio\\\\public\\\\profile.jpg'; Write-Host 'Copied.'\")",
+      "Bash(powershell -NoProfile -Command \"New-Item -ItemType Directory -Path 'C:\\\\Users\\\\ryan_\\\\OneDrive\\\\Documents\\\\GitHub\\\\rn-portfolio\\\\public' -Force | Out-Null; Copy-Item 'C:\\\\Users\\\\ryan_\\\\OneDrive\\\\Documents\\\\GitHub\\\\rn-portfolio\\\\profile_picture.jpg' 'C:\\\\Users\\\\ryan_\\\\OneDrive\\\\Documents\\\\GitHub\\\\rn-portfolio\\\\public\\\\profile.jpg'; Write-Host 'Done.'\")"
     ]
   }
 }

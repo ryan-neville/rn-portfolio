@@ -89,21 +89,6 @@ const experiences: Entry[] = [
     shadowColor: 'shadow-violet-500/40',
   },
   {
-    type: 'volunteer',
-    icon: Star,
-    company: 'Algonquin College',
-    location: 'Ottawa, Ontario, Canada',
-    overallPeriod: 'Jan 2014',
-    description:
-      'Volunteered to help incoming Computer Engineering Technology students set up their development environments — guiding peers through the installation of NetBeans IDE and other essential college software at the start of the academic year.',
-    roles: [{ title: 'Computer Software Installation Facilitator', period: 'Jan 2014' }],
-    highlights: [{ icon: Star, color: 'text-green-400', text: 'Peer mentoring & technical onboarding' }],
-    tags: ['Mentoring', 'Technical Support'],
-    accent: 'from-green-500 to-teal-500',
-    dotColor: 'bg-green-500',
-    shadowColor: 'shadow-green-500/40',
-  },
-  {
     type: 'education',
     icon: GraduationCap,
     company: 'Algonquin College',

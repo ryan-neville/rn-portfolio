@@ -77,12 +77,9 @@ export default function About() {
               <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQGIm8AiXZUUmQ/profile-displayphoto-shrink_200_200/0/1731361019777"
+                  src="/profile.jpg"
                   alt="Ryan Neville"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://avatars.githubusercontent.com/u/108026531?v=4'
-                  }}
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/60 via-transparent to-transparent" />
