@@ -51,14 +51,6 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
-            <a
-              href="https://ca.linkedin.com/in/ryan-neville-63b03289"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl text-white hover:opacity-90 transition-all hover:scale-105"
-            >
-              LinkedIn
-            </a>
           </div>
 
           {/* Mobile menu button */}
