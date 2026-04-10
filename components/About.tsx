@@ -10,9 +10,9 @@ const highlights = [
     color: 'text-yellow-400',
     bg: 'bg-yellow-400/10',
     border: 'border-yellow-400/20',
-    label: 'Hackathon Wins',
-    value: '2x',
-    sub: 'Kinaxis 2022 & 2023',
+    label: 'Hackathons',
+    value: '4x',
+    sub: 'Kinaxis 2022–2025',
   },
   {
     icon: GraduationCap,
@@ -21,7 +21,7 @@ const highlights = [
     border: 'border-blue-400/20',
     label: 'Education',
     value: "Algonquin",
-    sub: 'Computer Engineering Tech',
+    sub: 'Computer Engineering Tech.',
   },
   {
     icon: MapPin,
@@ -102,26 +102,30 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold text-white mb-2">Hi, I&apos;m Ryan 👋</h3>
-            <p className="text-blue-400 font-medium mb-6">Software Developer @ Kinaxis</p>
+            <p className="text-blue-400 font-medium mb-6">Team Lead, Cloud Platform @ Kinaxis</p>
 
             <div className="space-y-4 text-slate-400 leading-relaxed mb-8">
               <p>
-                I&apos;m a software developer based in Ottawa, Ontario, with a passion for building
-                reliable, scalable software solutions. Currently, I work at{' '}
+                I&apos;m a cloud platform engineer and team lead based in Ottawa, Ontario. I currently
+                lead the Cloud Platform team at{' '}
                 <span className="text-white font-medium">Kinaxis</span> — a global leader in supply
-                chain management software trusted by the world&apos;s most recognized brands.
+                chain management SaaS — where I&apos;ve grown from Advisory Developer to Senior SRE to
+                my current leadership role.
               </p>
               <p>
-                I hold a diploma in{' '}
+                Before Kinaxis, I spent three years at{' '}
+                <span className="text-white font-medium">Sitecore</span> progressing from Cloud Ops
+                Engineer to Senior Team Lead, and four years as a Software Developer at{' '}
+                <span className="text-white font-medium">Kivuto Solutions</span>. I hold a diploma
+                in{' '}
                 <span className="text-white font-medium">Computer Engineering Technology</span> from
-                Algonquin College, which gave me a strong technical foundation across software
-                development, networking, and systems engineering.
+                Algonquin College.
               </p>
               <p>
-                Beyond my day-to-day work, I thrive in fast-paced, creative environments — proven
-                by back-to-back wins at the{' '}
-                <span className="text-yellow-400 font-medium">Kinaxis Hackathons</span> in 2022 and
-                2023. I love tackling hard problems and turning ideas into working software.
+                I thrive in fast-paced, collaborative environments — demonstrated by participating
+                in four consecutive{' '}
+                <span className="text-yellow-400 font-medium">Kinaxis Hackathons</span> from 2022
+                through 2025. I love building reliable, scalable systems and bringing ideas to life.
               </p>
             </div>
 

@@ -13,7 +13,12 @@
       "Read(//c/Users/ryan_/AppData/Local/**)",
       "Bash(export PATH=\"$PATH:/c/Program Files/nodejs/\")",
       "Bash(npm audit:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\ryan_\\\\OneDrive\\\\Documents\\\\GitHub\\\\rn-portfolio\\\\fetch_linkedin.ps1\")",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebSearch",
+      "WebFetch(domain:rocketreach.co)",
+      "WebFetch(domain:www.signalhire.com)"
     ]
   }
 }

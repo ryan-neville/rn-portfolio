@@ -84,7 +84,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="text-lg md:text-xl text-slate-400 mb-5 font-light max-w-lg"
         >
-          Software Developer{' '}
+          Team Lead, Cloud Platform{' '}
           <span className="text-blue-400 font-medium">@Kinaxis</span>
         </motion.p>
 
