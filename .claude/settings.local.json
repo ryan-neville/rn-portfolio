@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ca.linkedin.com)",
+      "Bash(curl -s \"https://api.github.com/users/ryan-neville\")",
+      "Bash(curl -s \"https://api.github.com/users/ryan-neville/repos?sort=updated&per_page=10\")",
+      "Bash(curl -s \"https://api.github.com/users/ryan-neville/repos?sort=updated&per_page=100&type=public\")",
+      "Bash(python3 -c \"import json,sys; repos=json.load\\(sys.stdin\\); [print\\(r['name'], '|', r['description'], '|', r['language'], '|', r['updated_at'], '|', r['stargazers_count'], 'stars'\\) for r in repos]\")",
+      "Bash(node -e \"const chunks=[]; process.stdin.on\\('data',d=>chunks.push\\(d\\)\\); process.stdin.on\\('end',\\(\\)=>{const repos=JSON.parse\\(chunks.join\\(''\\)\\); repos.forEach\\(r=>console.log\\(r.name,'|',r.description,'|',r.language,'|',r.updated_at,'|',r.stargazers_count,'stars'\\)\\);}\\)\")",
+      "Bash(npm install:*)",
+      "Read(//c/Program Files/nodejs/**)",
+      "Read(//c/Users/ryan_/AppData/Roaming/npm/**)",
+      "Read(//c/Users/ryan_/AppData/Local/**)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs/\")",
+      "Bash(npm audit:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
