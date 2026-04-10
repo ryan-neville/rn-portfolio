@@ -57,7 +57,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl text-white hover:opacity-90 transition-all hover:scale-105"
             >
-              Hire Me
+              LinkedIn
             </a>
           </div>
 
