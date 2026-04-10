@@ -28,7 +28,7 @@ export default function Navbar() {
       <div
         className={`max-w-5xl mx-auto transition-all duration-500 rounded-2xl px-6 ${
           scrolled
-            ? 'glass border border-white/10 shadow-xl shadow-black/40 py-3'
+            ? 'glass border border-white/10 shadow-xl shadow-black/60 py-3'
             : 'py-4'
         }`}
       >
@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="relative group">
             <span className="text-xl font-black gradient-text tracking-tight">RN</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 group-hover:w-full transition-all duration-300" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-sky-400 group-hover:w-full transition-all duration-300" />
           </a>
 
           {/* Desktop nav */}
@@ -48,7 +48,7 @@ export default function Navbar() {
                 className="relative text-slate-400 hover:text-white text-sm font-medium transition-colors group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-sky-400 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
@@ -60,21 +60,9 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <div className="w-5 h-4 flex flex-col justify-between">
-              <span
-                className={`block h-0.5 bg-current transition-all duration-300 ${
-                  menuOpen ? 'rotate-45 translate-y-1.5' : ''
-                }`}
-              />
-              <span
-                className={`block h-0.5 bg-current transition-all duration-300 ${
-                  menuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`block h-0.5 bg-current transition-all duration-300 ${
-                  menuOpen ? '-rotate-45 -translate-y-2.5' : ''
-                }`}
-              />
+              <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+              <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
             </div>
           </button>
         </div>

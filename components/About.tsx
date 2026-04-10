@@ -7,27 +7,27 @@ import { Trophy, GraduationCap, MapPin } from 'lucide-react'
 const highlights = [
   {
     icon: Trophy,
-    color: 'text-yellow-400',
-    bg: 'bg-yellow-400/10',
-    border: 'border-yellow-400/20',
-    label: 'Hackathons',
+    color: 'text-amber-400',
+    bg: 'bg-amber-400/10',
+    border: 'border-amber-400/25',
+    label: 'Hackathon Participations',
     value: '4x',
     sub: 'Kinaxis 2022–2025',
   },
   {
     icon: GraduationCap,
-    color: 'text-blue-400',
-    bg: 'bg-blue-400/10',
-    border: 'border-blue-400/20',
+    color: 'text-sky-400',
+    bg: 'bg-sky-400/10',
+    border: 'border-sky-400/25',
     label: 'Education',
-    value: "Algonquin",
+    value: 'Algonquin',
     sub: 'Computer Engineering Tech.',
   },
   {
     icon: MapPin,
-    color: 'text-green-400',
-    bg: 'bg-green-400/10',
-    border: 'border-green-400/20',
+    color: 'text-emerald-400',
+    bg: 'bg-emerald-400/10',
+    border: 'border-emerald-400/25',
     label: 'Location',
     value: 'Ottawa',
     sub: 'Ontario, Canada',
@@ -39,9 +39,10 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="about" ref={ref} className="relative py-28 bg-[#050816]">
-      {/* Background accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-blue-500/40" />
+    <section id="about" ref={ref} className="relative py-28 bg-[#0d1117]">
+      {/* Warm glow rising from hero */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-amber-400/40 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0d1117] to-transparent pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Section heading */}
@@ -51,7 +52,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-blue-400 glass border border-blue-500/20 rounded-full mb-5">
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-amber-400 glass border border-amber-400/20 rounded-full mb-5">
             Who I Am
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -68,26 +69,25 @@ export default function About() {
             className="flex justify-center"
           >
             <div className="relative">
-              {/* Decorative border */}
-              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-blue-500/20 via-violet-500/10 to-pink-500/20 blur-2xl" />
+              {/* Warm glow behind image */}
+              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-amber-500/15 via-orange-500/10 to-sky-500/15 blur-2xl" />
               {/* Corner accents */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-blue-500 rounded-tl-xl" />
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-violet-500 rounded-br-xl" />
+              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-amber-400 rounded-tl-xl" />
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-sky-400 rounded-br-xl" />
               {/* Image */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-white/10">
+              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/profile.jpg"
                   alt="Ryan Neville"
                   className="w-full h-full object-cover"
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 glass border border-white/10 rounded-2xl px-4 py-3 shadow-xl">
+              <div className="absolute -bottom-4 -right-4 glass border border-white/10 rounded-2xl px-4 py-3 shadow-xl shadow-black/40">
                 <div className="text-2xl font-black gradient-text">10+</div>
-                <div className="text-xs text-slate-500">Years in Tech</div>
+                <div className="text-xs text-slate-500 mt-0.5">Years in Tech</div>
               </div>
             </div>
           </motion.div>
@@ -99,7 +99,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold text-white mb-2">Hi, I&apos;m Ryan 👋</h3>
-            <p className="text-blue-400 font-medium mb-6">Team Lead, Cloud Platform @ Kinaxis</p>
+            <p className="text-amber-400 font-medium mb-6">Team Lead, Cloud Platform @ Kinaxis</p>
 
             <div className="space-y-4 text-slate-400 leading-relaxed mb-8">
               <p>
@@ -121,8 +121,9 @@ export default function About() {
               <p>
                 I thrive in fast-paced, collaborative environments — demonstrated by participating
                 in four consecutive{' '}
-                <span className="text-yellow-400 font-medium">Kinaxis Hackathons</span> from 2022
-                through 2025 — earning the Microsoft Choice Award in 2025. I love building reliable, scalable systems and bringing ideas to life.
+                <span className="text-amber-400 font-medium">Kinaxis Hackathons</span> from 2022
+                through 2025 — earning the Microsoft Choice Award in 2025. I love building
+                reliable, scalable systems and bringing ideas to life.
               </p>
             </div>
 
