@@ -35,6 +35,16 @@ body {
   border-radius: 4px;
 }
 
+/* Hero background: scroll on mobile (iOS fix), fixed on desktop */
+.hero-bg {
+  background-attachment: scroll;
+}
+@media (min-width: 768px) {
+  .hero-bg {
+    background-attachment: fixed;
+  }
+}
+
 @layer utilities {
   /* Subtle dot grid — warm amber dots on dark */
   .bg-grid {
