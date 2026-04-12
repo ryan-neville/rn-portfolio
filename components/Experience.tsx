@@ -114,7 +114,7 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
       initial={{ opacity: 0, x: -30 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12 }}
-      className="relative pl-16 md:pl-20"
+      className="relative pl-12 sm:pl-16 md:pl-20"
     >
       {/* Timeline dot */}
       <div
@@ -127,7 +127,7 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
       </div>
 
       {/* Card */}
-      <div className="group glass border border-white/8 hover:border-white/16 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-black/40">
+      <div className="group glass border border-white/8 hover:border-white/16 rounded-2xl p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-black/40">
         {/* Current badge */}
         {exp.current && (
           <div className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-amber-400/10 text-amber-400 border border-amber-400/25 rounded-full mb-4">
@@ -137,24 +137,24 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
         )}
 
         {/* Header */}
-        <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <div className="p-1.5 rounded-lg bg-white/5">
-                <exp.icon size={14} className="text-slate-400" />
-              </div>
-              <span className="text-xs text-slate-500 uppercase tracking-wider font-medium">
-                {exp.type === 'work' ? 'Work Experience' : exp.type === 'education' ? 'Education' : 'Volunteer'}
-              </span>
+        <div className="mb-4">
+          <div className="flex items-center gap-2 mb-1">
+            <div className="p-1.5 rounded-lg bg-white/5">
+              <exp.icon size={13} className="text-slate-400" />
             </div>
-            <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
+            <span className="text-xs text-slate-500 uppercase tracking-wider font-medium">
+              {exp.type === 'work' ? 'Work Experience' : exp.type === 'education' ? 'Education' : 'Volunteer'}
+            </span>
+          </div>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+            <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
               {exp.company}
             </h3>
-            <p className="text-xs text-slate-500 mt-0.5">{exp.location}</p>
+            <span className="text-xs text-slate-500 font-mono whitespace-nowrap">
+              {exp.overallPeriod}
+            </span>
           </div>
-          <span className="text-xs text-slate-500 font-mono whitespace-nowrap mt-1">
-            {exp.overallPeriod}
-          </span>
+          <p className="text-xs text-slate-500 mt-0.5">{exp.location}</p>
         </div>
 
         {/* Role progression */}
@@ -229,24 +229,24 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="experience" className="relative py-28 bg-[#111827]">
+    <section id="experience" className="relative py-16 md:py-24 lg:py-28 bg-[#111827]">
       {/* Background */}
       <div className="absolute inset-0 bg-grid" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/4 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/4 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-5xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-sky-400 glass border border-sky-400/20 rounded-full mb-5">
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-sky-400 glass border border-sky-400/20 rounded-full mb-4 sm:mb-5">
             Career Journey
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Experience &amp; <span className="gradient-text">Education</span>
           </h2>
         </motion.div>
@@ -256,7 +256,7 @@ export default function Experience() {
           {/* Vertical line — amber fading to sky, matching sunset */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/60 via-sky-500/30 to-transparent" />
 
-          <div className="space-y-10">
+          <div className="space-y-6 sm:space-y-10">
             {experiences.map((exp, i) => (
               <EntryCard key={i} exp={exp} index={i} isInView={isInView} />
             ))}

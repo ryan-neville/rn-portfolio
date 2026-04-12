@@ -77,13 +77,13 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="pt-4 pb-2 flex flex-col gap-4 border-t border-white/10 mt-4">
+              <div className="pt-2 pb-3 flex flex-col border-t border-white/10 mt-3">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="text-slate-400 hover:text-white text-sm font-medium transition-colors"
+                    className="text-slate-400 hover:text-white text-sm font-medium transition-colors py-3 px-1 border-b border-white/5 last:border-0 active:text-amber-400"
                   >
                     {link.label}
                   </a>
