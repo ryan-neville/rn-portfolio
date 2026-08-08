@@ -82,7 +82,7 @@ export default function About() {
               </div>
               {/* Floating badge — repositioned to not overflow on mobile */}
               <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 glass border border-white/10 rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl shadow-black/40">
-                <div className="text-xl sm:text-2xl font-black gradient-text">10+</div>
+                <div className="text-xl sm:text-2xl font-black gradient-text">11+</div>
                 <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5">Years in Tech</div>
               </div>
             </div>
