@@ -1,8 +1,5 @@
-'use client'
-
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import { Trophy, GraduationCap, MapPin } from 'lucide-react'
+import Reveal from './Reveal'
 
 const highlights = [
   {
@@ -32,41 +29,28 @@ const highlights = [
 ]
 
 export default function About() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-
   return (
-    <section id="about" ref={ref} className="relative py-16 md:py-24 lg:py-28 bg-[#0d1117]">
+    <section id="about" className="relative py-16 md:py-24 lg:py-28 bg-[#0d1117]">
       {/* Warm glow rising from hero */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-amber-400/40 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-12 md:mb-20"
-        >
+        <Reveal className="text-center mb-12 md:mb-20">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-amber-400 glass border border-amber-400/20 rounded-full mb-4 sm:mb-5">
             Who I Am
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             About <span className="gradient-text">Me</span>
           </h2>
-        </motion.div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Profile image — hidden on small mobile, shown from sm up */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="flex justify-center"
-          >
+          <Reveal variant="left" delay={100} className="flex justify-center">
             <div className="relative mb-10 lg:mb-0">
               {/* Warm glow behind image */}
-              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-amber-500/15 via-orange-500/10 to-sky-500/15 blur-2xl" />
+              <div className="absolute -inset-6 rounded-3xl glow-portrait" />
               {/* Corner accents */}
               <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-l-2 border-amber-400 rounded-tl-xl" />
               <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 border-b-2 border-r-2 border-sky-400 rounded-br-xl" />
@@ -76,6 +60,10 @@ export default function About() {
                 <img
                   src="/profile.jpg"
                   alt="Ryan Neville"
+                  width={200}
+                  height={200}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -86,14 +74,10 @@ export default function About() {
                 <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5">Years in Tech</div>
               </div>
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Bio content */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <Reveal variant="right" delay={200}>
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Hi, I&apos;m Ryan 👋</h3>
             <p className="text-amber-400 font-medium mb-5 sm:mb-6 text-sm sm:text-base">
               Manager, Site Reliability Engineering @ Kinaxis
@@ -127,11 +111,9 @@ export default function About() {
             {/* Highlight cards */}
             <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {highlights.map((item, i) => (
-                <motion.div
+                <Reveal
                   key={item.value}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                  delay={300 + i * 100}
                   className={`glass border ${item.border} rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center`}
                 >
                   <div className={`inline-flex p-1.5 sm:p-2 rounded-lg sm:rounded-xl ${item.bg} mb-1.5 sm:mb-2`}>
@@ -139,10 +121,10 @@ export default function About() {
                   </div>
                   <div className={`text-sm sm:text-lg font-bold ${item.color} leading-tight`}>{item.value}</div>
                   <div className="text-[9px] sm:text-[10px] text-slate-600 mt-0.5 leading-tight">{item.sub}</div>
-                </motion.div>
+                </Reveal>
               ))}
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>
