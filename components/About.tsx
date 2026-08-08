@@ -96,16 +96,16 @@ export default function About() {
           >
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Hi, I&apos;m Ryan 👋</h3>
             <p className="text-amber-400 font-medium mb-5 sm:mb-6 text-sm sm:text-base">
-              Team Lead, Cloud Platform @ Kinaxis
+              Manager, Site Reliability Engineering @ Kinaxis
             </p>
 
             <div className="space-y-3 sm:space-y-4 text-slate-400 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
               <p>
-                I&apos;m a cloud platform engineer and team lead based in Ottawa, Ontario. I currently
-                lead the Cloud Platform team at{' '}
+                I&apos;m a site reliability engineering leader based in Ottawa, Ontario. I currently
+                manage a Site Reliability Engineering team at{' '}
                 <span className="text-white font-medium">Kinaxis</span> — a global leader in supply
                 chain management SaaS — where I&apos;ve grown from Advisory Developer to Senior SRE to
-                my current leadership role.
+                Team Lead, Cloud Platform, and now into my current management role.
               </p>
               <p>
                 Before Kinaxis, I spent three years at{' '}
