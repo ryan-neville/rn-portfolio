@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Ryan Neville | Software Developer',
+  title: 'Ryan Neville | SRE Manager',
   description:
-    'Personal portfolio of Ryan Neville — Software Developer based in Ottawa, Ontario, Canada.',
+    'Personal portfolio of Ryan Neville — SRE Manager based in Ottawa, Ontario, Canada.',
   openGraph: {
-    title: 'Ryan Neville | Software Developer',
-    description: 'Software Developer at Kinaxis, based in Ottawa, Ontario, Canada.',
+    title: 'Ryan Neville | SRE Manager',
+    description: 'SRE Manager at Kinaxis, based in Ottawa, Ontario, Canada.',
     type: 'website',
   },
 }
