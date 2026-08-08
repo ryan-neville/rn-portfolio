@@ -35,9 +35,10 @@ const experiences: Entry[] = [
     overallPeriod: 'Jun 2022 — Present',
     current: true,
     description:
-      "Progressed through multiple engineering roles at Kinaxis, a global leader in supply chain management SaaS. Responsibilities have spanned cloud engineering, site reliability, and platform leadership — helping ensure that enterprise customers worldwide can depend on a resilient, scalable supply chain platform.",
+      "Progressed through multiple engineering and leadership roles at Kinaxis, a global leader in supply chain management SaaS. Responsibilities have spanned cloud engineering, site reliability, team leadership, and people management — helping ensure that enterprise customers worldwide can depend on a resilient, scalable supply chain platform.",
     roles: [
-      { title: 'Team Lead — Cloud Platform', period: 'Nov 2024 — Present', current: true },
+      { title: 'Manager, Site Reliability Engineering', period: 'May 2026 — Present', current: true },
+      { title: 'Team Lead — Cloud Platform', period: 'Nov 2024 — May 2026' },
       { title: 'Senior Site Reliability Engineer', period: 'Jan 2023 — Nov 2024' },
       { title: 'Advisory Developer, Cloud Engineering', period: 'Jun 2022 — Jan 2023' },
     ],
@@ -48,7 +49,7 @@ const experiences: Entry[] = [
       { icon: Trophy, color: 'text-amber-400', text: 'Kinaxis Hackathon Participant — 2023' },
       { icon: Trophy, color: 'text-amber-400', text: 'Kinaxis Hackathon Participant — 2022' },
     ],
-    tags: ['Cloud Platform', 'Site Reliability Engineering', 'Team Leadership', 'DevOps'],
+    tags: ['Site Reliability Engineering', 'People Management', 'Cloud Platform', 'Team Leadership', 'DevOps'],
     accent: 'from-amber-400 to-orange-400',
     dotColor: 'bg-amber-500',
     shadowColor: 'shadow-amber-500/40',

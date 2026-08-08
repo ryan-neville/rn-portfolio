@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Name */}
           <div>
             <div className="text-3xl font-black gradient-text text-center">Ryan Neville</div>
-            <p className="text-slate-500 text-sm text-center mt-1">Team Lead, Cloud Platform</p>
+            <p className="text-slate-500 text-sm text-center mt-1">Manager, Site Reliability Engineering</p>
           </div>
 
           {/* Location */}
