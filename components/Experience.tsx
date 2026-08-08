@@ -1,8 +1,5 @@
-'use client'
-
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import { Briefcase, GraduationCap, Trophy, Star, Code, ChevronRight, Medal } from 'lucide-react'
+import Reveal from './Reveal'
 
 type Role = {
   title: string
@@ -109,12 +106,11 @@ const experiences: Entry[] = [
   },
 ]
 
-function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInView: boolean }) {
+function EntryCard({ exp, index }: { exp: Entry; index: number }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.12 }}
+    <Reveal
+      variant="left"
+      delay={index * 120}
       className="relative pl-12 sm:pl-16 md:pl-20"
     >
       {/* Timeline dot */}
@@ -221,45 +217,37 @@ function EntryCard({ exp, index, isInView }: { exp: Entry; index: number; isInVi
           ))}
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   )
 }
 
 export default function Experience() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-
   return (
     <section id="experience" className="relative py-16 md:py-24 lg:py-28 bg-[#111827]">
       {/* Background */}
       <div className="absolute inset-0 bg-grid" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/4 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/4 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[720px] h-[720px] rounded-full orb-amber pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[720px] h-[720px] rounded-full orb-sky pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-12 md:mb-20"
-        >
+        <Reveal className="text-center mb-12 md:mb-20">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-sky-400 glass border border-sky-400/20 rounded-full mb-4 sm:mb-5">
             Career Journey
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Experience &amp; <span className="gradient-text">Education</span>
           </h2>
-        </motion.div>
+        </Reveal>
 
         {/* Timeline */}
-        <div ref={ref} className="relative">
+        <div className="relative">
           {/* Vertical line — amber fading to sky, matching sunset */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/60 via-sky-500/30 to-transparent" />
 
           <div className="space-y-6 sm:space-y-10">
             {experiences.map((exp, i) => (
-              <EntryCard key={i} exp={exp} index={i} isInView={isInView} />
+              <EntryCard key={i} exp={exp} index={i} />
             ))}
           </div>
         </div>
