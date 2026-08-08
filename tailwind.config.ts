@@ -5,6 +5,8 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    // Submodule app mounted at /projects/japanese-flashcards
+    './projects/japanese-flashcard-app/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {

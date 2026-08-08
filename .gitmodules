@@ -1,0 +1,3 @@
+[submodule "projects/japanese-flashcard-app"]
+	path = projects/japanese-flashcard-app
+	url = https://github.com/ryan-neville/japanese-flashcard-app.git
