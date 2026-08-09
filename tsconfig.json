@@ -26,6 +26,31 @@
       }
     ],
     "paths": {
+      // The vowel-movement submodule imports its own files through the same
+      // `@/` prefix this project uses, but rooted at its own directory —
+      // `@/components/Game`, `@/lib/puzzle`, `@/data/puzzles.json`. Resolving
+      // those against the portfolio root would miss. Each shared prefix lists
+      // the portfolio's own directory first so this project always wins, then
+      // falls back to the submodule; Next feeds these same entries to webpack
+      // via JsConfigPathsPlugin, so bundling and type-checking agree.
+      // Only `components` actually exists on both sides, and no filename is
+      // shared between the two, so nothing is shadowed today.
+      "@/components/*": [
+        "./components/*",
+        "./projects/vowel-movement/components/*"
+      ],
+      "@/hooks/*": [
+        "./hooks/*",
+        "./projects/vowel-movement/hooks/*"
+      ],
+      "@/lib/*": [
+        "./lib/*",
+        "./projects/vowel-movement/lib/*"
+      ],
+      "@/data/*": [
+        "./data/*",
+        "./projects/vowel-movement/data/*"
+      ],
       "@/*": [
         "./*"
       ],
