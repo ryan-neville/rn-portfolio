@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    // Matches the japanese-flashcard-app submodule's target. Files reached via
+    // import are type-checked under this config regardless of `exclude`, so the
+    // submodule's own tsconfig never applies during a portfolio build.
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
