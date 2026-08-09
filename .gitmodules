@@ -1,3 +1,6 @@
 [submodule "projects/japanese-flashcard-app"]
 	path = projects/japanese-flashcard-app
 	url = https://github.com/ryan-neville/japanese-flashcard-app.git
+[submodule "projects/vowel-movement"]
+	path = projects/vowel-movement
+	url = https://github.com/ryan-neville/vowel-movement.git

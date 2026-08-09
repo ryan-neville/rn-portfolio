@@ -13,22 +13,29 @@ Side projects are pulled in as git submodules under [`projects/`](projects/) and
 | Project | Route | Source |
 |---|---|---|
 | Japanese Kana Flashcards | `/projects/japanese-flashcards` | [ryan-neville/japanese-flashcard-app](https://github.com/ryan-neville/japanese-flashcard-app) |
+| Vowel Movement | `/projects/vowel-movement` | [ryan-neville/vowel-movement](https://github.com/ryan-neville/vowel-movement) |
 
 Selecting a project card in the **Projects** section opens its route in a new tab.
 
 ### How a submodule app is mounted
 
-The submodule's UI is imported into a route in this app's App Router — only the app component is used, not the submodule's own root layout or global stylesheet:
+The submodule's UI is imported into a route in this app's App Router — only the app component is used, never the submodule's own root layout:
 
 ```
 app/projects/japanese-flashcards/page.tsx
   └── imports @/projects/japanese-flashcard-app/app/page
+
+app/projects/vowel-movement/page.tsx
+  └── imports @/projects/vowel-movement/app/page
 ```
 
-This means the mounted app inherits this site's Next.js version, React version, fonts, and Tailwind build. Two things keep that working:
+This means the mounted app inherits this site's Next.js version, React version, fonts, and build toolchain. Three things keep that working:
 
-- `tailwind.config.ts` includes `./projects/japanese-flashcard-app/app/**/*` in its `content` globs so the submodule's utility classes are generated.
+- `tailwind.config.ts` includes a submodule's source in its `content` globs so the submodule's utility classes are generated. Only needed for submodules that style with Tailwind — vowel-movement uses CSS Modules, so it has no glob.
 - `tsconfig.json` excludes `projects` from type-checking, so the submodule's own dependency versions don't have to match this project's.
+- `tsconfig.json` `paths` re-points the `@/` prefixes a submodule uses for its *own* files (`@/components/*`, `@/lib/*`, `@/hooks/*`, `@/data/*`) at that submodule, falling back from this project's own directories. Next feeds the same entries to webpack, so bundling and type-checking agree. Submodules that import relatively — as the flashcard app does — need none of this.
+
+Global stylesheets are the one thing that does not compose cleanly. The flashcard app's are skipped entirely (its Tailwind 4 layers would fight this project's Tailwind 3). Vowel-movement's `app/globals.css` *is* imported, because its CSS Modules read design tokens declared there and render unstyled without it; it is plain CSS with no Tailwind layers, and it only loads on its own route. Because it restyles `body`, that route links back to the site with a plain `<a>` rather than `next/link` — the App Router does not reliably drop a route's stylesheet on a soft navigation.
 
 ### Adding another project submodule
 
@@ -36,7 +43,7 @@ This means the mounted app inherits this site's Next.js version, React version, 
 git submodule add <repo-url> projects/<name>
 ```
 
-Then add a route under `app/projects/<name>/`, a Tailwind content glob, and an entry to the `projects` array in [`components/Projects.tsx`](components/Projects.tsx).
+Then add a route under `app/projects/<name>/`, an entry to the `projects` array in [`components/Projects.tsx`](components/Projects.tsx), and whichever of the wiring above the submodule needs — a Tailwind content glob, `@/` path mappings, a stylesheet import.
 
 ## Tech Stack
 
@@ -55,8 +62,10 @@ rn-portfolio/
 │   ├── layout.tsx        # Root layout with metadata and Inter font
 │   └── page.tsx          # Page composition
 │   └── projects/
-│       └── japanese-flashcards/
-│           └── page.tsx  # Mounts the flashcard submodule app
+│       ├── japanese-flashcards/
+│       │   └── page.tsx  # Mounts the flashcard submodule app
+│       └── vowel-movement/
+│           └── page.tsx  # Mounts the vowel-movement submodule app
 ├── components/
 │   ├── Navbar.tsx        # Sticky glass navbar with mobile menu
 │   ├── Hero.tsx          # Full-height hero with profile picture and CTAs
@@ -65,7 +74,8 @@ rn-portfolio/
 │   ├── Projects.tsx      # Project cards, each opening in a new tab
 │   └── Footer.tsx        # Footer with LinkedIn and GitHub links
 ├── projects/
-│   └── japanese-flashcard-app/  # git submodule
+│   ├── japanese-flashcard-app/  # git submodule
+│   └── vowel-movement/          # git submodule
 ├── public/
 │   └── profile.jpg       # Profile picture
 ├── next.config.js

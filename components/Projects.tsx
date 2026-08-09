@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Languages, ArrowUpRight } from 'lucide-react'
+import { ExternalLink, Github, Languages, Grid3x3, ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
 
 type Project = {
@@ -13,6 +13,13 @@ type Project = {
   tags: string[]
   accent: string
   glow: string
+  /**
+   * The card's hover and focus treatments, which have to match `accent`.
+   * Tailwind only sees class names it can read literally in the source, so
+   * these are written out in full rather than assembled from the accent
+   * colour at runtime.
+   */
+  states: { border: string; title: string; arrow: string; ring: string }
 }
 
 const projects: Project[] = [
@@ -33,6 +40,36 @@ const projects: Project[] = [
     tags: ['Next.js', 'React 19', 'TypeScript', 'Tailwind CSS 4'],
     accent: 'from-amber-400 to-orange-400',
     glow: 'shadow-amber-500/20',
+    states: {
+      border: 'hover:border-amber-400/30 focus-within:border-amber-400/40',
+      title: 'group-hover:text-amber-300',
+      arrow: 'group-hover:text-amber-400',
+      ring: 'focus-visible:ring-amber-400/60',
+    },
+  },
+  {
+    icon: Grid3x3,
+    name: 'Vowel Movement',
+    tagline: 'A daily word square',
+    description:
+      'A daily 4x4 word square. Drag the day’s eight vowels into the blanks to spell four words across and four words down. The grid is derived from your local date rather than a server, with drag-and-drop plus a full keyboard path, streak tracking, and a shareable result.',
+    // Served by this site from the vowel-movement submodule.
+    liveUrl: '/projects/vowel-movement',
+    repoUrl: 'https://github.com/ryan-neville/vowel-movement',
+    stats: [
+      { value: '529', label: 'Puzzles' },
+      { value: '4×4', label: 'Grid' },
+      { value: '8', label: 'Vowels' },
+    ],
+    tags: ['Next.js', 'React 19', 'TypeScript', 'CSS Modules'],
+    accent: 'from-sky-400 to-cyan-400',
+    glow: 'shadow-sky-500/20',
+    states: {
+      border: 'hover:border-sky-400/30 focus-within:border-sky-400/40',
+      title: 'group-hover:text-sky-300',
+      arrow: 'group-hover:text-sky-400',
+      ring: 'focus-visible:ring-sky-400/60',
+    },
   },
 ]
 
@@ -44,7 +81,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <Reveal delay={index * 120} className="h-full">
       <article
-        className={`group relative h-full glass border border-white/8 hover:border-amber-400/30 rounded-2xl p-5 sm:p-7 md:p-8 transition-all duration-300 hover:shadow-xl ${project.glow} focus-within:border-amber-400/40`}
+        className={`group relative h-full glass border border-white/8 rounded-2xl p-5 sm:p-7 md:p-8 transition-all duration-300 hover:shadow-xl ${project.glow} ${project.states.border}`}
       >
         {/* Header */}
         <div className="flex items-start justify-between gap-4 mb-4">
@@ -53,13 +90,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <project.icon size={18} className="text-[#0d1117]" />
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
+              <h3 className={`text-lg sm:text-xl font-bold text-white transition-colors ${project.states.title}`}>
                 {/* Stretched link — makes the whole card selectable */}
                 <a
                   href={primaryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 rounded"
+                  className={`after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 rounded ${project.states.ring}`}
                 >
                   {project.name}
                 </a>
@@ -69,7 +106,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
           <ArrowUpRight
             size={18}
-            className="flex-shrink-0 text-slate-600 group-hover:text-amber-400 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300"
+            className={`flex-shrink-0 text-slate-600 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300 ${project.states.arrow}`}
           />
         </div>
 
