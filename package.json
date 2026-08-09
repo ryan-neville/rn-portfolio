@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sync:audio": "node scripts/sync-flashcard-audio.mjs",
+    "predev": "npm run sync:audio",
     "dev": "next dev",
+    "predev:lan": "npm run sync:audio",
     "dev:lan": "next dev -H 0.0.0.0",
+    "prebuild": "npm run sync:audio",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

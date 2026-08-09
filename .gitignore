@@ -16,6 +16,10 @@
 # production
 /build
 
+# pronunciation clips mirrored from the flashcard submodule by
+# scripts/sync-flashcard-audio.mjs. Committed in that repo, generated here.
+/public/audio
+
 # misc
 .DS_Store
 *.pem
