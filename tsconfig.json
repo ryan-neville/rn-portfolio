@@ -18,7 +18,18 @@
     "incremental": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      // The submodule ships its own node_modules (Next 16, React 19 types),
+      // which shadows this project's when its files are type-checked. webpack
+      // already aliases react/react-dom/next to this project's copies, so pin
+      // type resolution to the same ones. Without this the two React type
+      // identities clash and `Link` is rejected as a JSX component.
+      "react": ["./node_modules/@types/react"],
+      "react/*": ["./node_modules/@types/react/*"],
+      "react-dom": ["./node_modules/@types/react-dom"],
+      "react-dom/*": ["./node_modules/@types/react-dom/*"],
+      "next": ["./node_modules/next"],
+      "next/*": ["./node_modules/next/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
