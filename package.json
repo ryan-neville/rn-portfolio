@@ -1,6 +1,6 @@
 {
   "name": "rn-portfolio",
-  "version": "5.4.0",
+  "version": "5.4.1",
   "private": true,
   "scripts": {
     "sync:audio": "node scripts/sync-flashcard-audio.mjs",
